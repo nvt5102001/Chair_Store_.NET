@@ -1,0 +1,19 @@
+/*===========start Video gallery css=================*/
+#gallery2
+{
+    max-width:100% !important;
+}
+.ug-strip-panel
+{
+    width: 40% !important;
+}
+.ug-videoplayer
+{
+    width: 60% !important;
+}
+.ug-thumb-title,.ug-thumb-desc
+{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+/*===========end Video gallery css=================*/

@@ -1,0 +1,188 @@
+﻿@model PagedList.IPagedList<blackWood.Models.SanPham>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+<style>
+    .pagination {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+        .pagination li {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            margin: 0 5px;
+            position: relative;
+        }
+
+        .pagination .active {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+
+        .pagination li a {
+            font-size: 15px;
+            color: #333;
+            position: absolute;
+            padding: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+    .btnSearch {
+        background: #fff;
+        border: none;
+    }
+
+    .button-right {
+        float: right;
+        padding: 10px;
+    }
+
+        .button-right a {
+            text-decoration: none;
+            color: white;
+        }
+
+    .searchSP {
+        height: 35px;
+        position: relative;
+        padding: 0 35px 0 0;
+        border: 1px solid #9bd6fe;
+        border-radius: 25rem;
+        background: #fff;
+        overflow: hidden;
+        transition: all .5s ease-in-out;
+    }
+
+        .searchSP .inputsearch {
+            width: 100%;
+            padding: 5px 10px;
+            border: none;
+            background: none;
+            transition: all .5s ease-in-out;
+        }
+
+            .searchSP .inputsearch:focus, .searchSP button:focus {
+                outline: 0;
+            }
+
+        .searchSP button {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: -2px;
+            width: 35px;
+            height: 100%;
+            text-align: center;
+            border: none !important;
+            background: none !important;
+        }
+</style>
+<div id="content" class="bg-container">
+    <header class="head">
+        <div class="main-bar">
+            <div class="row no-gutters">
+                <div class="col-lg-6 col-sm-4">
+                    <h4 class="nav_top_align">
+                        <i class="fa fa-user"></i>
+                        Thông tin sản phẩm
+                    </h4>
+                </div>
+                <div class="col-lg-6 col-sm-8 col-12">
+                    <ol class="breadcrumb float-right  nav_breadcrumb_top_align">
+                        <li class="breadcrumb-item">
+                            <a href="index1.html">
+                                <i class="fa fa-home" data-pack="default" data-tags=""></i> Trang chủ
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Sản phẩm</a>
+                        </li>
+                        <li class="active breadcrumb-item">Thông tin sản phẩm</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="outer">
+        <div class="inner bg-container">
+            <div class="card">
+
+                <div class="card-body mt-1" id="user_body">
+                    <div class="table-toolbar d-flex justify-content-between mb-3 align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-dark mb-3"> @Html.ActionLink("Thêm sản phẩm", "ThemSanPham", null, new { @class = "text-light" }) <i class="fa fa-plus text-light"></i></button>
+                        </div>
+                        <div class="d-flex searchSP">
+                            @using (Html.BeginForm("SearchSPAdmin", "SanphamAd", FormMethod.Post))
+                            {
+                                @Html.TextBox("txtsearchsp", "", htmlAttributes: new { @placeholder = "Search Products..", @class = "inputsearch" })
+                                <button type="submit">
+                                    <span class="font-icon-search"></span>
+                                </button>
+
+
+                            }
+                        </div>
+
+                    </div>
+                    <div>
+                        <div>
+                            <table class="table  table-striped table-bordered table-hover dataTable no-footer" id="editable_table" role="grid">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc wid-20" tabindex="0" rowspan="1" colspan="1">Tên sản phẩm</th>
+
+                                        <th class="sorting wid-25" tabindex="0" rowspan="1" colspan="1">Loại</th>
+                                        <th class="sorting wid-25" tabindex="0" rowspan="1" colspan="1">Màu</th>
+                                        <th class="sorting wid-10" tabindex="0" rowspan="1" colspan="1">Số lượng tồn</th>
+                                        <th class="sorting wid-20" tabindex="0" rowspan="1" colspan="1">Giá bán</th>
+                                        <th class="sorting wid-10" tabindex="0" rowspan="1" colspan="1">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr role="row" class="even">
+
+                                            <td>@Html.DisplayFor(modelItem => item.TenSP)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.LoaiSp.TenLoai)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.Mau.TenMau)</td>
+                                            <td class="center">@Html.DisplayFor(modelItem => item.SoLuongTon)</td>
+                                            <td class="center">@Html.DisplayFor(modelItem => item.DonGia)</td>
+                                            <td>
+                                                @Html.ActionLink(" ", "ChiTietSP", new { @MaSP = item.MaSP }, new { @class = "fa fa-eye text-success" })&nbsp; &nbsp;
+
+                                                @Html.ActionLink(" ", "SuaSanPham", new { @MaSP = item.MaSP }, new { @class = "fa fa-pencil text-warning" })&nbsp; &nbsp;
+                                                @Html.ActionLink(" ", "XoaSanPham", new { @MaSP = item.MaSP }, new { @class = "fa fa-trash text-danger" })
+
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <div class="w3-center w3-padding-32">
+                                <div class="w3-bar mr-5 ml-5">
+                                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    
+</div>
+

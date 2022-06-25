@@ -1,0 +1,124 @@
+﻿@model blackWood.Models.SanPham
+
+@{
+    ViewBag.Title = "XoaSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+<style>
+    .table1
+    {
+        
+    }
+    .table1, tr, td, th {
+        border: 1px solid #333;
+        border-collapse: collapse;
+
+    }
+        .table1 td, .table1 th{
+            padding: 10px;
+        }
+      
+</style>
+
+
+<div id="content" class="bg-container">
+    <header class="head">
+        <div class="main-bar">
+            <div class="row no-gutters">
+                <div class="col-lg-6">
+                    <h4 class="nav_top_align skin_txt">
+                        <i class="fas fa-chair"></i>
+                        Xoá thông tin sản phẩm
+                    </h4>
+                </div>
+                <div class="col-lg-6">
+                    <ol class="breadcrumb float-right nav_breadcrumb_top_align">
+                        <li class="breadcrumb-item">
+                            <a href="index1.html">
+                                <i class="fa fa-home" data-pack="default" data-tags=""></i>
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Sản phẩm</a>
+                        </li>
+                        <li class="breadcrumb-item active">Xoá sản phẩm</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="outer">
+        <div class="inner bg-container">
+            <div class="card">
+                <div class="card-body m-t-35">
+                    <h2 class="text-center mb-5">Bạn có chắc chắn muốn xoá sản phẩm này không?</h2>
+                    <table class="w-100 m-auto table1 ">
+                        <tr>
+                            <th class="text-center">Tên sản phẩm</th>
+                            <td>@Html.DisplayFor(model => model.TenSP)</td>
+                        </tr>
+
+                        <tr>
+                            <th class="text-center"> Thông tin sản phẩm</th>
+                            <td>@Html.DisplayFor(model => model.GioiThieu)</td>
+                        </tr>
+
+                        <tr>
+                            <th class="text-center">Số lượng</th>
+                            <td>@Html.DisplayFor(model => model.SoLuong)</td>
+                        </tr>
+
+                        <tr>
+                            <th class="text-center">Số lượng tồn</th>
+                            <td> @Html.DisplayFor(model => model.SoLuongTon)</td>
+                        </tr>
+
+                        <tr>
+                            <th class="text-center">Ảnh sản phẩm</th>
+                            <td> @Html.DisplayFor(model => model.AnhSP)</td>
+                        </tr>
+                        <tr>
+                            <th class="text-center">Đơn giá</th>
+                            <td>@Html.DisplayFor(model => model.DonGia)</td>
+                        </tr>
+                        <tr>
+                            <th class="text-center">Kích thước</th>
+                            <td>@Html.DisplayFor(model => model.KichThuoc.TenKT)</td>
+                        </tr>
+                        <tr>
+                            <th class="text-center">Loại sản phẩm</th>
+                            <td>@Html.DisplayFor(model => model.LoaiSp.TenLoai)</td>
+                        </tr>
+
+                        <tr>
+                            <th class="text-center">Màu sắc </th>
+                            <td>@Html.DisplayFor(model => model.Mau.TenMau)</td>
+                        </tr>
+
+                        <tr>
+                            <th class="text-center">Nước sản xuất</th>
+                            <td>@Html.DisplayFor(model => model.NuocSX.TenNSX)</td>
+                        </tr>
+
+                    </table>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color mt-5">
+                            <input type="submit" value="Xoá" class="btn btn-danger" /> 
+                            @Html.ActionLink("Quay lại", "Index", null,new { @class = "btn btn-dark" })
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+   
+</div>

@@ -1,0 +1,70 @@
+﻿@model blackWood.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_LayoutPageSignUp.cshtml";
+}
+<section class="signup__area po-rel-z1 pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+                <div class="sign__wrapper white-bg">
+                    <div class="sign__header mb-35">
+                        <div class="sign__in text-center">
+                            <a href="#" class="sign__social g-plus text-start mb-15"><i class="fab fa-google-plus-g"></i>Sign Up with Google</a>
+                            <p> <span>........</span> Or, <a href="sign-up.html">sign up</a> with your email<span> ........</span> </p>
+                        </div>
+                    </div>
+                    <div class="sign__form">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                        <div class="sign__input-wrapper mb-25">
+                            <h5>Tên người dùng: </h5>
+                            <div class="sign__input">
+                                @Html.EditorFor(model => model.TenNguoiDung, new { htmlAttributes = new { @class = "form-control" } })
+
+                                <i class="fal fa-user"></i>
+                            </div>
+                            @Html.ValidationMessageFor(model => model.TenNguoiDung, "", new { @class = "text-danger" })
+                        </div>
+                            <div class="sign__input-wrapper mb-25">
+                                <h5>Tên tài khoản: </h5>
+                                <div class="sign__input">
+                                    @Html.EditorFor(model => model.TaiKhoan1, new { htmlAttributes = new { @class = "form-control" } })
+
+                                    <i class="fal fa-user"></i>
+                                </div>
+                                @Html.ValidationMessageFor(model => model.TaiKhoan1, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="sign__input-wrapper mb-25">
+                                <h5>Mật khẩu</h5>
+                                <div class="sign__input">
+                                    @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+
+                                    <i class="fal fa-lock"></i>
+                                </div>
+                                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="sign__input-wrapper mb-10">
+                                <h5>Email</h5>
+                                <div class="sign__input">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+
+                                    <i class="fal fa-envelope"></i>
+                                </div>
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                          
+                            <button type="submit" class="btn-tp w-100 mt-10"> <span></span> Sign Up</button>
+                            <div class="sign__new text-center mt-20">
+                                <p>Already in Markit ? @Html.ActionLink("Sign In", "SignIn")</p>
+                            </div>
+                        }
+                        </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

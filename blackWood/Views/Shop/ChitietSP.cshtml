@@ -1,0 +1,393 @@
+﻿@model blackWood.Models.SanPham
+@{
+    ViewBag.Title = "ChitietSP";
+    Layout = "~/Views/Shared/_LayoutPageProductDetail.cshtml";
+}
+
+
+
+<!-- product-details-start -->
+<section class="product-details pt-90 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="product__modal-box d-flex">
+                   
+
+                <div class="tab-content mb-20" id="product-detailsContent">
+                    <div class="tab-pane fade active show" id="pro-one" role="tabpanel" aria-labelledby="pro-one-tab">
+                        <div class="product__modal-img product__thumb w-img">
+                            <img src="@Url.Content("~/assets/img/products/img_chair/" + @Html.DisplayFor(model => model.AnhSP))" alt="">
+                            <div class="product__sale ">
+                                <span class="new">new</span>
+                                <span class="percent">-0%</span>
+                            </div>
+                        </div>
+                    </div>
+
+               
+               </div>
+            </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="product__modal-content-2">
+                    <h4><a href="product-details.html">@Html.DisplayFor(model => model.TenSP)</a></h4>
+                    <div class="rating rating-shop mb-15">
+                        <ul>
+                            <li><span><i class="fas fa-star"></i></span></li>
+                            <li><span><i class="fas fa-star"></i></span></li>
+                            <li><span><i class="fas fa-star"></i></span></li>
+                            <li><span><i class="fas fa-star"></i></span></li>
+                            <li><span><i class="fal fa-star"></i></span></li>
+                        </ul>
+                        <span class="rating-no ml-10 rating-left">
+                            3 rating(s)
+                        </span>
+                        <span class="review rating-left"><a href="#">Add your Review</a></span>
+                    </div>
+                    <div class="product__price mb-25">
+                        <span style="font-size:30px;">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:c0}", Model.DonGia)</span>
+                        
+                    </div>
+                    <div class="product__modal-des mb-30">
+                        <p>@Html.DisplayFor(model => model.GioiThieu)</p>
+                    </div>
+                    <div class="product__details-color d-sm-flex align-items-center">
+                        <p>Màu sắc: @Html.DisplayFor(model => model.Mau.TenMau)</p>
+                      
+              
+           
+                    </div>
+                    <div class="product__details-size d-sm-flex align-items-center mb-30">
+                        <p>Kích thước: @Html.DisplayFor(model => model.KichThuoc.TenKT)</p>
+                      
+                    </div>
+                    @using (Html.BeginForm("ThemGioHang", "Cart", new { @sMaSP = Model.MaSP, @strUrl = Request.Url.ToString() }))
+                    { <div class="pro-quan-area d-sm-flex align-items-center">
+                            <div class="pro-cart-btn">
+                                <button class="add-cart-btn mb-20" type="submit">+ Add to Cart</button>
+                            </div>
+                           
+                        </div>
+                    }
+                    <div class="product__tag mb-25">
+                        <span class="ct mr-20">Category: @Html.DisplayFor(model => model.LoaiSp.TenLoai)</span>
+
+
+                    </div>
+                    <div class="product__share">
+                        <span>Share :</span>
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-70">
+            <div class="col-xl-12">
+                <div class="product__details-tab">
+                    <div class="product__details-tab-nav text-center mb-45">
+                        <nav>
+                            <div class="nav nav-tabs justify-content-start justify-content-sm-center" id="pro-details" role="tablist">
+                                <a class="nav-item nav-link active" id="des-tab" data-bs-toggle="tab" href="#des" role="tab" aria-controls="des" aria-selected="true">Additional Information</a>
+                               
+                                <a class="nav-item nav-link" id="review-tab" data-bs-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (3)</a>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="tab-content" id="pro-detailsContent">
+                        <div class="tab-pane fade active show" id="des" role="tabpanel">
+                            <div class="product__details-des mb-20">
+                                <p>@Html.DisplayFor(model => model.GioiThieu)</p>
+
+                                <div class="product__details-des-list mb-20">
+                                    <ul>
+                                        <li><span>Tên sản phẩm: @Html.DisplayFor(model => model.TenSP)</span></li>
+                                        <li><span>Tên loại ghế: @Html.DisplayFor(model => model.LoaiSp.TenLoai)</span></li>
+                                        <li><span>Kích thước: @Html.DisplayFor(model => model.KichThuoc.TenKT)</span></li>
+                                        <li><span>Màu sắc: @Html.DisplayFor(model => model.Mau.TenMau)</span></li>
+                                        <li><span>Nước sản xuất: @Html.DisplayFor(model => model.NuocSX.TenNSX)</span></li>                         
+                                    </ul>
+                                </div> 
+                            </div>
+                        </div>
+                       
+                        <div class="tab-pane fade" id="review" role="tabpanel">
+                            <div class="product__details-review mb-35">
+                                <div class="postbox__comments">
+                                    <div class="postbox__comment-title mb-30">
+                                        <h3>Reviews (03)</h3>
+                                    </div>
+                                    <div class="latest-comments mb-30">
+                                        <ul>
+                                            <li>
+                                                <div class="comments-box">
+                                                    <div class="comments-avatar">
+                                                        <img src="~/assets/img/author/avater-1.png" alt="">
+                                                    </div>
+                                                    <div class="comments-text">
+                                                        <div class="avatar-name">
+                                                            <h5>Siarhei Dzenisenka</h5>
+                                                            <span> - 3 months ago </span>
+                                                        </div>
+                                                        <div class="user-rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for <span>“lorem ipsum”</span> will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose.</p>
+                                                        <a class="reply-2" href="#">Leave Reply</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="children">
+                                                <div class="comments-box">
+                                                    <div class="comments-avatar">
+                                                        <img src="~/assets/img/author/avater-2.png" alt="">
+                                                    </div>
+                                                    <div class="comments-text">
+                                                        <div class="avatar-name">
+                                                            <h5>Julias Roy</h5>
+                                                            <span> - 6 months ago </span>
+                                                        </div>
+                                                        <div class="user-rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for <span>“lorem ipsum”</span> will uncover many web sites still in their infancy. </p>
+                                                        <a class="reply-2" href="#">Leave Reply</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="comments-box">
+                                                    <div class="comments-avatar">
+                                                        <img src="~/assets/img/author/avater-3.png" alt="">
+                                                    </div>
+                                                    <div class="comments-text">
+                                                        <div class="avatar-name">
+                                                            <h5>Arista Williamson</h5>
+                                                            <span> - 6 months ago </span>
+                                                        </div>
+                                                        <div class="user-rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for <span>“lorem ipsum”</span> will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose.</p>
+                                                        <a class="reply-2" href="#">Leave Reply</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="post-comments-form">
+                                    <div class="post-comments-title mb-30">
+                                        <h3>Your Review</h3>
+                                        <div class="post-rating">
+                                            <span>Your Rating :</span>
+                                            <ul class="ml-5">
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fal fa-star"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fal fa-star"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fal fa-star"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fal fa-star"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fal fa-star"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <form id="contacts-form" class="conatct-post-form" action="#">
+                                        <div class="row">
+                                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                                <div class="contact-icon p-relative contacts-name">
+                                                    <input type="text" placeholder="Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                                <div class="contact-icon p-relative contacts-name">
+                                                    <input type="email" placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="contact-icon p-relative contacts-email">
+                                                    <input type="text" placeholder="Subject">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="contact-icon p-relative contacts-message">
+                                                    <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Comments"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <button class="add-cart-btn" type="submit">Post comment</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    </div>
+</section>
+<!-- product-details-end -->
+<!-- shop modal start -->
+<div class="modal fade" id="productModalId" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered product__modal" role="document">
+        <div class="modal-content">
+            <div class="product__modal-wrapper p-relative">
+                <div class="product__modal-close p-absolute">
+                    <button data-bs-dismiss="modal"><i class="fal fa-times"></i></button>
+                </div>
+                <div class="product__modal-inner">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="product__modal-box">
+                                <div class="tab-content" id="modalTabContent">
+                                    <div class="tab-pane fade show active" id="nav1" role="tabpanel" aria-labelledby="nav1-tab">
+                                        <div class="product__modal-img w-img">
+                                            <img src="~/assets/img/products/quick-view/quick-view-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav2" role="tabpanel" aria-labelledby="nav2-tab">
+                                        <div class="product__modal-img w-img">
+                                            <img src="~/assets/img/products/quick-view/quick-view-2.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav3" role="tabpanel" aria-labelledby="nav3-tab">
+                                        <div class="product__modal-img w-img">
+                                            <img src="~/assets/img/products/quick-view/quick-view-3.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav4" role="tabpanel" aria-labelledby="nav4-tab">
+                                        <div class="product__modal-img w-img">
+                                            <img src="~/assets/img/products/quick-view/quick-view-4.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="nav nav-tabs" id="modalTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="nav1-tab" data-bs-toggle="tab" data-bs-target="#nav1" type="button" role="tab" aria-controls="nav1" aria-selected="true">
+                                            <img src="~/assets/img/products/quick-view/nav/quick-nav-1.jpg" alt="">
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
+                                            <img src="~/assets/img/products/quick-view/nav/quick-nav-2.jpg" alt="">
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="nav3-tab" data-bs-toggle="tab" data-bs-target="#nav3" type="button" role="tab" aria-controls="nav3" aria-selected="false">
+                                            <img src="~/assets/img/products/quick-view/nav/quick-nav-3.jpg" alt="">
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="nav4-tab" data-bs-toggle="tab" data-bs-target="#nav4" type="button" role="tab" aria-controls="nav4" aria-selected="false">
+                                            <img src="~/assets/img/products/quick-view/nav/quick-nav-4.jpg" alt="">
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="product__modal-content">
+                                <h4 class="product__modal-title"><a href="product-details.html">Samsung C49J89: £875, Debenhams Plus</a></h4>
+                                <div class="product__modal-des mb-40">
+                                    <p>Typi non habent claritatem insitam, est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt </p>
+                                </div>
+                                <div class="product__modal-stock">
+                                    <span>Availability :</span>
+                                    <span>In Stock</span>
+                                </div>
+                                <div class="product__modal-stock sku mb-30">
+                                    <span>SKU:</span>
+                                    <span>Samsung C49J89: £875, Debenhams Plus</span>
+                                </div>
+                                <div class="product__modal-review d-sm-flex">
+                                    <div class="rating mb-15 mr-35">
+                                        <ul>
+                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product__modal-add-review mb-15">
+                                        <span><a href="#">1 Review</a></span>
+                                        <span><a href="#">Add Review</a></span>
+                                    </div>
+                                </div>
+                                <div class="product__modal-price">
+                                    <span>$560.00</span>
+                                </div>
+                                <div class="product__modal-form mb-30">
+                                    <form action="#">
+                                        <div class="pro-quan-area d-lg-flex align-items-center">
+                                            <div class="product-quantity mr-20 mb-25">
+                                                <div class="cart-plus-minus p-relative"><input type="text" value="1" /></div>
+                                            </div>
+                                            <div class="pro-cart-btn mb-25">
+                                                <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="product__modal-links">
+                                    <ul>
+                                        <li><a href="#" title="Add to Wishlist"><i class="fal fa-heart"></i></a></li>
+                                        <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a></li>
+                                        <li><a href="#" title="Print"><i class="fal fa-print"></i></a></li>
+                                        <li><a href="#" title="Print"><i class="fal fa-share-alt"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- shop modal end -->

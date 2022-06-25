@@ -1,0 +1,1042 @@
+﻿@RenderBody()
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<!-- Mirrored from themepure.net/html/blackwood-prv/blackwood/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Apr 2022 14:18:31 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Blackwood - Clean Minimal eCommerce HTML5 Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/assets/img/favicon.png">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/assets/css/preloader.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="~/assets/css/meanmenu.css">
+    <link rel="stylesheet" href="~/assets/css/animate.css">
+    <link rel="stylesheet" href="~/assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="~/assets/css/swiper-bundle.css">
+    <link rel="stylesheet" href="~/assets/css/backtotop.css">
+    <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/assets/css/nice-select.css">
+    <link rel="stylesheet" href="~/assets/css/font-awesome-pro.css">
+    <link rel="stylesheet" href="~/assets/flaticon/flaticon.css">
+    <link rel="stylesheet" href="~/assets/css/default.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+
+    <style>
+        .slider1 {
+            background-image: url("../../assets/img/slider/slider-2.jpg");
+        }
+        .slider2 {
+            background-image: url("../../assets/img/slider/slider-1.jpg");
+        }
+        .banner__content-3 {
+            background-image: url("../../assets/img/products/banner/2/offer_banner.jpg");
+        }  
+    </style>
+</head>
+<body>
+    <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <!-- prealoder area start -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="first_object"></div>
+                <div class="object" id="second_object"></div>
+                <div class="object" id="third_object"></div>
+            </div>
+        </div>
+    </div>
+    <!-- prealoder area end -->
+    <!-- back to top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- back to top end -->
+    <!-- header area start -->
+    <header class="d-none d-lg-block">
+        <div class="header__area mb-30">
+            <div class="header__top-2 d-none d-md-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xxl-6 col-lg-6 col-md-6">
+                            <div class="header__top-menu">
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            <a href="#">About Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Careers</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Blog</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Contact Us</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-lg-6 col-md-6">
+                            <div class="header__select d-flex align-items-center justify-content-end">
+                                <div class="header__lang header__select-item header__select-item-2 mr-15 d-flex align-items-center ">
+                                    <span>Language : </span>
+                                    <select>
+                                        <option>EN</option>
+                                        <option>BN</option>
+                                        <option>IN</option>
+                                        <option>CH</option>
+                                        <option>AM</option>
+                                    </select>
+                                </div>
+                                <div class="header__currency header__select-item header__select-item-2 d-flex align-items-center">
+                                    <span>Currency : </span>
+                                    <select>
+                                        <option>USD</option>
+                                        <option>Euro</option>
+                                        <option>Yen</option>
+                                        <option>Rupee</option>
+                                        <option>Sterlin</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__middle-2 d-none d-md-block">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xxl-2 col-lg-3 col-md-6">
+                            <div class="logo">
+                                <a href="~/Trangchu/Index">
+                                    <img src="~/assets/img/logo/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xxl-5 col-lg-5 col-md-6">
+                            <div class="header__search">
+                                @using (Html.BeginForm("resultsSearch", "Shop", FormMethod.Post))
+                                {
+                                <div class="header__search-input-2">
+                            
+                                    @Html.TextBox("txtsearchkey", "", htmlAttributes: new { @placeholder = "Search Products.." })
+                                    <button type="submit"><i class="far fa-search"></i></button>
+                                </div>
+                                }
+                                   
+                                </div>
+                        </div>
+                        <div class="col-xxl-5 col-lg-4 col-md-12">
+                            <div class="header__middle-right-2">
+                                <div class="header__action ml-30">
+                                    <ul>
+                                        <li>
+                                            <a href="@Url.Action("SignIn", "Account")">
+                                                <i class="fal fa-user-circle"></i>
+                        
+                                            </a>
+                                        </li>
+                                      
+                                        <li>
+                                            @Html.Action("CartPartial", "Cart")
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__menu">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xxl-8 col-lg-8 col-md-6 col-4">
+                            <div class="main-menu main-menu-2">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li>
+                                            @Html.ActionLink("Home", "Index", "Trangchu")
+
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Shop", "Index", "Shop")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("About", "Index", "About")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Blogs", "Index", "Blog")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Contact", "Index", "Contact")
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="header-bar mb-10 d-xl-none">
+                                <button type="button" class="header-bar-btn" data-bs-toggle="modal" data-bs-target="#offCanvasModal">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-lg-4 col-md-6 col-8">
+                            <div class="header__purchase d-flex justify-content-end">
+                                
+                                <div class="logo d-md-none text-left">
+                                    <a href="~/Trangchu/Index">
+                                        <img src="~/assets/img/logo/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__bottom-2 black-bg-5">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xxl-4 col-lg-4 col-md-4">
+                            <div class="header__bottom-offer header__bottom-offer-border text-center">
+                                <p>Refer a Friend. <span> Get 20% Off</span> </p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-lg-4 col-md-4">
+                            <div class="header__bottom-offer header__bottom-offer-border text-center">
+                                <p>Subscribe Today <span>Get $10 Off</span> </p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-lg-4 col-md-4">
+                            <div class="header__bottom-offer text-center">
+                                <p>Free Shipping +<span>30 Day Returns</span> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+    <!-- mobile-header-area start -->
+    <div class="mobile-header-area pt-20 pb-20 d-lg-none">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <div class="mobile-logo">
+                        <a href="~/Trangchu/Index"><img src="~/assets/img/logo/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="header-bar d-xl-none text-end">
+                        <button type="button" class="header-bar-btn" data-bs-toggle="modal" data-bs-target="#offCanvasModal">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mobile-header-area end -->
+    <!-- cart mini area start -->
+    
+    <!-- cart mini area end -->
+    <div class="body-overlay"></div>
+    <!-- cart mini area end -->
+    <!-- sidebar area start -->
+    <section class="offcanvas__area">
+        <div class="modal fade" id="offCanvasModal" tabindex="-1" aria-labelledby="offCanvasModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="offcanvas__wrapper">
+                        <div class="offcanvas__top d-flex align-items-center mb-60 justify-content-between">
+                            <div class="logo">
+                                <a href="index-3.html">
+                                    <img src="~/assets/img/logo/logo.png" alt="logo">
+                                </a>
+                            </div>
+                            <div class="offcanvas__close">
+                                <button class="offcanvas__close-btn" data-bs-dismiss="modal" data-bs-target="#offCanvasModal">
+                                    <svg viewBox="0 0 22 22">
+                                        <path d="M12.41,11l5.29-5.29c0.39-0.39,0.39-1.02,0-1.41s-1.02-0.39-1.41,0L11,9.59L5.71,4.29c-0.39-0.39-1.02-0.39-1.41,0
+                                            s-0.39,1.02,0,1.41L9.59,11l-5.29,5.29c-0.39,0.39-0.39,1.02,0,1.41C4.49,17.9,4.74,18,5,18s0.51-0.1,0.71-0.29L11,12.41l5.29,5.29
+                                            C16.49,17.9,16.74,18,17,18s0.51-0.1,0.71-0.29c0.39-0.39,0.39-1.02,0-1.41L12.41,11z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="sidebar__search mb-25">
+                            <form action="#">
+                                <input type="text" placeholder="What are you searching for?">
+                                <button type="submit"><i class="far fa-search"></i></button>
+                            </form>
+                        </div>
+                        <div class="offcanvas__content p-relative z-index-1">
+                            <div class="canvas__menu">
+                                <div class="mobile-menu fix"></div>
+                            </div>
+                            <div class="offcanvas__action mt-40 mb-15">
+                                <a href="#">Login</a>
+                                <a href="#" class="has-tag">
+                                    <svg viewBox="0 0 22 22">
+                                        <path d="M20.26,11.3c2.31-2.36,2.31-6.18-0.02-8.53C19.11,1.63,17.6,1,16,1c0,0,0,0,0,0c-1.57,0-3.05,0.61-4.18,1.71c0,0,0,0,0,0
+                                            L11,3.41l-0.81-0.69c0,0,0,0,0,0C9.06,1.61,7.58,1,6,1C4.4,1,2.89,1.63,1.75,2.77c-2.33,2.35-2.33,6.17-0.02,8.53
+                                            c0,0,0,0.01,0.01,0.01l0.01,0.01c0,0,0,0,0,0c0,0,0,0,0,0L11,20.94l9.25-9.62c0,0,0,0,0,0c0,0,0,0,0,0L20.26,11.3
+                                            C20.26,11.31,20.26,11.3,20.26,11.3z M3.19,9.92C3.18,9.92,3.18,9.92,3.19,9.92C3.18,9.92,3.18,9.91,3.18,9.91
+                                            c-1.57-1.58-1.57-4.15,0-5.73C3.93,3.42,4.93,3,6,3c1.07,0,2.07,0.42,2.83,1.18C8.84,4.19,8.85,4.2,8.86,4.21
+                                            c0.01,0.01,0.01,0.02,0.03,0.03l1.46,1.25c0.07,0.06,0.14,0.09,0.22,0.13c0.01,0,0.01,0.01,0.02,0.01c0.13,0.06,0.27,0.1,0.41,0.1
+                                            c0.08,0,0.16-0.03,0.25-0.05c0.03-0.01,0.07-0.01,0.1-0.02c0.07-0.03,0.13-0.07,0.2-0.11c0.03-0.02,0.07-0.03,0.1-0.06l1.46-1.24
+                                            c0.01-0.01,0.02-0.02,0.03-0.03c0.01-0.01,0.03-0.01,0.04-0.02C13.93,3.42,14.93,3,16,3c0,0,0,0,0,0c1.07,0,2.07,0.42,2.83,1.18
+                                            c1.56,1.58,1.56,4.15,0,5.73c0,0,0,0.01-0.01,0.01c0,0,0,0,0,0L11,18.06L3.19,9.92z" />
+                                    </svg>
+                                    <span class="tag">2</span>
+                                </a>
+                                <a href="#" class="has-tag">
+                                    <i class="far fa-shopping-bag"></i>
+                                    <span class="tag">3</span>
+                                </a>
+                                <div class="header__select header__select-d d-flex align-items-center mt-10">
+                                    <div class="header__lang header__select-item mr-15">
+                                        <select>
+                                            <option>EN</option>
+                                            <option>BN</option>
+                                            <option>IN</option>
+                                            <option>CH</option>
+                                            <option>AM</option>
+                                        </select><div class="nice-select" tabindex="0"><span class="current">EN</span><ul class="list list-2"><li data-value="EN" class="option selected focus">EN</li><li data-value="BN" class="option">BN</li><li data-value="IN" class="option">IN</li><li data-value="CH" class="option">CH</li><li data-value="AM" class="option">AM</li></ul></div>
+                                    </div>
+                                    <div class="header__currency header__select-item">
+                                        <select>
+                                            <option>USD</option>
+                                            <option>Euro</option>
+                                            <option>Yen</option>
+                                            <option>Rupee</option>
+                                            <option>Sterlin</option>
+                                        </select><div class="nice-select" tabindex="0"><span class="current">USD</span><ul class="list list-2"><li data-value="USD" class="option selected focus">USD</li><li data-value="Euro" class="option">Euro</li><li data-value="Yen" class="option">Yen</li><li data-value="Rupee" class="option">Rupee</li><li data-value="Sterlin" class="option">Sterlin</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="offcanvas__social mt-15">
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- sidebar area end -->
+
+    <main>
+        <!-- slider area start -->
+        <section class="slider__area slider__padding">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="slider__active slider__active-2 swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="slider__item slider__height swiper-slide d-flex align-items-center include-bg slider1">
+                                    <div class="container p-0">
+                                        <div class="row">
+                                            <div class="col-xxl-5">
+                                                <div class="slider__content slider__content-2  p-relative z-index-11">
+                                                    <span data-animation="fadeInUp" data-delay=".3s">SUMMER ‘21</span>
+                                                    <h3 class="slider__title" data-animation="fadeInUp" data-delay=".5s">Decor Chair</h3>
+                                                    <div class="slider__btn" data-animation="fadeInUp" data-delay=".4s">
+                                                        <a href="~/Shop/Index" class="slider-btn">Discover Now <i class="fal fa-angle-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider__item slider__height swiper-slide d-flex align-items-center include-bg slider2">
+                                    <div class="container p-0">
+                                        <div class="row">
+                                            <div class="col-xxl-5">
+                                                <div class="slider__content slider__content-2 p-relative z-index-11">
+                                                    <span data-animation="fadeInUp" data-delay=".3s">SUMMER ‘21</span>
+                                                    <h3 class="slider__title" data-animation="fadeInUp" data-delay=".5s">Flip The Switch</h3>
+                                                    <div class="slider__btn" data-animation="fadeInUp" data-delay=".4s">
+                                                        <a href="~/Shop/Index" class="slider-btn">Discover Now <i class="fal fa-angle-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-slider-pagination main-slider-pagination-2">
+                                <button class="main-slider-button-prev"><i class="fal fa-angle-left"></i></button>
+                                <button class="main-slider-button-next"><i class="fal fa-angle-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+        <section class="banner__area mb-30 mt-50">
+            <div class="container">
+                <div class="section__title-line section__title-line-2 mb-30">
+                    <div class="row">
+                        <div class="col-xxl-6 col-sm-8 col-6">
+                            <div class="section__title-wrapper d-flex align-items-center">
+                                <span class="section__title-icon mr-15">
+                                    <img src="~/assets/img/icon/section-icon-2.png" alt="">
+                                </span>
+                                <h2 class="section__title-3">Trending Offers</h2>
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-sm-4 col-6">
+                            <div class="product__hot-more d-flex justify-content-end">
+                                <a href="~/Shop/Index" class="more-btn">View All Offers <i class="far fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner__slider-active owl-carousel">
+                    <div class="banner__slider-item">
+                        <div class="row">
+                            <div class="col-xxl-6 col-lg-6">
+                                <div class="banner__item-2 p-relative fix mb-30">
+                                    <div class="banner__thumb w-img">
+                                        <img src="~/assets/img/products/banner/2/product-banner-1.jpg" alt="">
+                                    </div>
+                                    <div class="banner__content-2">
+                                        <h3 class="banner__title-2">
+                                            <a href="~/Shop/Index">A Chair Set For <br> Holidays</a>
+                                        </h3>
+                                        <p>Go to place where you're not going stresed</p>
+                                        <a href="~/Shop/Index" class="b-btn-3">View More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-lg-6">
+                                <div class="banner__item-2 p-relative fix mb-30">
+                                    <div class="banner__thumb w-img">
+                                        <img src="~/assets/img/products/banner/2/product-banner-2.jpg" alt="">
+                                    </div>
+                                    <div class="banner__content-2">
+                                        <h3 class="banner__title-2">
+                                            <a href="~/Shop/Index">Living For The <br>Little Things</a>
+                                        </h3>
+                                        <p>Go to place where you're not going stresed</p>
+                                        <a href="~/Shop/Index" class="b-btn-3">View More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner__slider-item">
+                        <div class="row">
+                            <div class="col-xxl-6 col-lg-6">
+                                <div class="banner__item-2 p-relative fix mb-30">
+                                    <div class="banner__thumb w-img">
+                                        <img src="~/assets/img/products/banner/2/product-banner-3.jpg" alt="">
+                                    </div>
+                                    <div class="banner__content-2">
+                                        <h3 class="banner__title-2">
+                                            <a href="~/Shop/Index">A Cushion Set For <br> Holidays</a>
+                                        </h3>
+                                        <p>Go to place where you're not going stresed</p>
+                                        <a href="~/Shop/Index" class="b-btn-3">View More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-lg-6">
+                                <div class="banner__item-2 p-relative fix mb-30">
+                                    <div class="banner__thumb w-img">
+                                        <img src="~/assets/img/products/banner/2/product-banner-4.jpg" alt="">
+                                    </div>
+                                    <div class="banner__content-2">
+                                        <h3 class="banner__title-2">
+                                            <a href="~/Shop/Index">Living For The <br>Enjoyable Things</a>
+                                        </h3>
+                                        <p>Go to place where you're not going stresed</p>
+                                        <a href="~/Shop/Index" class="b-btn-3">View More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- banner area end -->
+        <!-- product area start -->
+        <section class="product__area pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="section__title-line section__title-line-2">
+                            <div class="row">
+                                <div class="col-xxl-6 col-xl-6 col-lg-5">
+                                    <div class="section__title-wrapper">
+                                        <span class="section__title-icon mr-15">
+                                            <img src="~/assets/img/icon/section-icon-3.png" alt="">
+                                        </span>
+                                        <h2 class="section__title-3">Popular Products</h2>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-6 col-xl-6 col-lg-7">
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="product__item-wrapper-2 pt-30">
+                            <div class="product__tab-content">
+                                <div class="tab-content" id="trendingTabContent">
+                                    <div class="tab-pane fade show active" id="new-2" role="tabpanel" aria-labelledby="new-2">
+                                        <div class="row row-cols-xxl-5 row-cols-xl-5 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
+                                            @Html.Action("SPCungLoai", "Shop")
+                                        </div>
+                                       
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- product area end -->
+        <!-- banner area start -->
+        <section class="banner__area-2 pb-70">
+            <div class="container-fluid">
+                <div class="row gx-0">
+                    <div class="col-xl-12">
+                        <div class="banner__content-3 text-center" >
+                            <div class="banner__content-wrapper">
+                                <h5>Fancy $50 Off Your First Order?</h5>
+                                <span class="banner-text mb-45">Join Our Mailing List!</span>
+                                <form action="#" class="d-flex justify-content-center">
+                                    <input type="text" name="email" id="email" placeholder="Enter Email ID...">
+                                    <button type="submit" class="b-btn-3 ml-5">Send</button>
+                                </form>
+                                <div class="save-info mt-15">
+                                    <input class="p-0" type="checkbox" aria-label="Checkbox for following text input">
+                                    <p class="mb-0 pl-10">We’ll never spam you.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+        <section class="blog__area pb-15">
+            <div class="container">
+                <div class="section__title-line section__title-line-2 mb-30">
+                    <div class="row">
+                        <div class="col-xxl-6 col-sm-8 col-6">
+                            <div class="section__title-wrapper d-flex align-items-center">
+                                <span class="section__title-icon mr-15">
+                                    <img src="~/assets/img/icon/section-icon-4.png" alt="">
+                                </span>
+                                <h2 class="section__title-3">Recent Articles</h2>
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-sm-4 col-6">
+                            <div class="product__hot-more d-flex justify-content-end">
+                                <a href="#" class="more-btn">View All Post <i class="far fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="blog__slider-2 owl-carousel">
+                            <div class="blog__item blog__item-2 transition-3 mb-30 white-bg">
+                                <div class="blog__thumb w-img fix p-relative">
+                                    <a href="#">
+                                        <img src="~/assets/img/blog/blog-1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="blog__content blog__content-3 p-relative">
+                                    <div class="blog__meta blog__meta-2 mb-10">
+                                        <span>
+                                            <a href="#"> MAY 20, 2020</a>
+                                        </span>
+                                    </div>
+                                    <h3 class="blog__title">
+                                        <a href="#">Kitchen Inspired On Japanese</a>
+                                    </h3>
+                                    <p>In mattis ed mollis, eros et ultrices tempus, mau ipsum alihmtjha libero, non adipiscing dolor urna a orci. Aenean commodolig..</p>
+                                    <div class="blog__btn">
+                                        <a href="#" class="link-btn-2">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog__item blog__item-2 transition-3 mb-30 white-bg">
+                                <div class="blog__thumb w-img fix p-relative">
+                                    <a href="#">
+                                        <img src="~/assets/img/blog/blog-2.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="blog__content blog__content-3 p-relative">
+                                    <div class="blog__meta blog__meta-2 mb-10">
+                                        <span>
+                                            <a href="#"> MAY 20, 2021</a>
+                                        </span>
+                                    </div>
+                                    <h3 class="blog__title">
+                                        <a href="#">Traveling Solo Is Awesome</a>
+                                    </h3>
+                                    <p>In mattis ed mollis, eros et ultrices tempus, mau ipsum alihmtjha libero, non adipiscing dolor urna a orci. Aenean commodolig..</p>
+                                    <div class="blog__btn">
+                                        <a href="#" class="link-btn-2">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog__item blog__item-2 transition-3 mb-30 white-bg">
+                                <div class="blog__thumb w-img fix p-relative">
+                                    <a href="#">
+                                        <img src="~/assets/img/blog/blog-3.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="blog__content blog__content-3 p-relative">
+                                    <div class="blog__meta blog__meta-2 mb-10">
+                                        <span>
+                                            <a href="#"> MAY 20, 2019</a>
+                                        </span>
+                                    </div>
+                                    <h3 class="blog__title">
+                                        <a href="#">A Beautiful Sunday Morning</a>
+                                    </h3>
+                                    <p>In mattis ed mollis, eros et ultrices tempus, mau ipsum alihmtjha libero, non adipiscing dolor urna a orci. Aenean commodolig..</p>
+                                    <div class="blog__btn">
+                                        <a href="#" class="link-btn-2">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog__item blog__item-2 transition-3 mb-30 white-bg">
+                                <div class="blog__thumb w-img fix p-relative">
+                                    <a href="#">
+                                        <img src="~/assets/img/blog/blog-4.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="blog__content blog__content-3 p-relative">
+                                    <div class="blog__meta blog__meta-2 mb-10">
+                                        <span>
+                                            <a href="#"> June 20, 2021</a>
+                                        </span>
+                                    </div>
+                                    <h3 class="blog__title">
+                                        <a href="#">What a Beautiful day that was</a>
+                                    </h3>
+                                    <p>In mattis ed mollis, eros et ultrices tempus, mau ipsum alihmtjha libero, non adipiscing dolor urna a orci. Aenean commodolig..</p>
+                                    <div class="blog__btn">
+                                        <a href="#" class="link-btn-2">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- blog area end -->
+        <!-- features__area-2-start -->
+        <section class="features__area-2 footer-bg pt-35">
+            <div class="container">
+                <div class="features__wrapper">
+                    <div class="row">
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                            <div class="features__item features__item-2 mb-20">
+                                <div class="features__icon mr-20">
+                                    <i class="flaticon-truck"></i>
+                                </div>
+                                <div class="features__content">
+                                    <h3 class="features__title features__title-2">Free Shipping Orders $60+</h3>
+                                    <p>Moves so quickly that</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                            <div class="features__item features__item-2 mb-20">
+                                <div class="features__icon mr-20">
+                                    <i class="flaticon-credit-card"></i>
+                                </div>
+                                <div class="features__content">
+                                    <h3 class="features__title features__title-2">24/7 Customer Support</h3>
+                                    <p>Moves so quickly that</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                            <div class="features__item features__item-2 mb-20">
+                                <div class="features__icon mr-20">
+                                    <i class="flaticon-exchange"></i>
+                                </div>
+                                <div class="features__content">
+                                    <h3 class="features__title features__title-2">100% Secure Payments</h3>
+                                    <p>PayPal / MasterCard </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- features__area-2-end -->
+        <!-- shop modal start -->
+        <div class="modal fade" id="productModalId" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered product__modal" role="document">
+                <div class="modal-content">
+                    <div class="product__modal-wrapper p-relative">
+                        <div class="product__modal-close p-absolute">
+                            <button data-bs-dismiss="modal"><i class="fal fa-times"></i></button>
+                        </div>
+                        <div class="product__modal-inner">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="product__modal-box">
+                                        <div class="tab-content" id="modalTabContent">
+                                            <div class="tab-pane fade show active" id="nav1" role="tabpanel" aria-labelledby="nav1-tab">
+                                                <div class="product__modal-img w-img">
+                                                    <img src="~/assets/img/products/quick-view/quick-view-1.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="nav2" role="tabpanel" aria-labelledby="nav2-tab">
+                                                <div class="product__modal-img w-img">
+                                                    <img src="~/assets/img/products/quick-view/quick-view-2.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="nav3" role="tabpanel" aria-labelledby="nav3-tab">
+                                                <div class="product__modal-img w-img">
+                                                    <img src="~/assets/img/products/quick-view/quick-view-3.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="nav4" role="tabpanel" aria-labelledby="nav4-tab">
+                                                <div class="product__modal-img w-img">
+                                                    <img src="~/assets/img/products/quick-view/quick-view-4.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="nav nav-tabs" id="modalTab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="nav1-tab" data-bs-toggle="tab" data-bs-target="#nav1" type="button" role="tab" aria-controls="nav1" aria-selected="true">
+                                                    <img src="~/assets/img/products/quick-view/nav/quick-nav-1.jpg" alt="">
+                                                </button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
+                                                    <img src="~/assets/img/products/quick-view/nav/quick-nav-2.jpg" alt="">
+                                                </button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="nav3-tab" data-bs-toggle="tab" data-bs-target="#nav3" type="button" role="tab" aria-controls="nav3" aria-selected="false">
+                                                    <img src="~/assets/img/products/quick-view/nav/quick-nav-3.jpg" alt="">
+                                                </button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="nav4-tab" data-bs-toggle="tab" data-bs-target="#nav4" type="button" role="tab" aria-controls="nav4" aria-selected="false">
+                                                    <img src="~/assets/img/products/quick-view/nav/quick-nav-4.jpg" alt="">
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="product__modal-content">
+                                        <h4 class="product__modal-title"><a href="#">Samsung C49J89: £875, Debenhams Plus</a></h4>
+                                        <div class="product__modal-des mb-40">
+                                            <p>Typi non habent claritatem insitam, est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt </p>
+                                        </div>
+                                        <div class="product__modal-stock">
+                                            <span>Availability :</span>
+                                            <span>In Stock</span>
+                                        </div>
+                                        <div class="product__modal-stock sku mb-30">
+                                            <span>SKU:</span>
+                                            <span>Samsung C49J89: £875, Debenhams Plus</span>
+                                        </div>
+                                        <div class="product__modal-review d-sm-flex">
+                                            <div class="rating mb-15 mr-35">
+                                                <ul>
+                                                    <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="product__modal-add-review mb-15">
+                                                <span><a href="#">1 Review</a></span>
+                                                <span><a href="#">Add Review</a></span>
+                                            </div>
+                                        </div>
+                                        <div class="product__modal-price">
+                                            <span>$560.00</span>
+                                        </div>
+                                        <div class="product__modal-form mb-30">
+                                            <form action="#">
+                                                <div class="pro-quan-area d-lg-flex align-items-center">
+                                                    <div class="product-quantity mr-20 mb-25">
+                                                        <div class="cart-plus-minus p-relative"><input type="text" value="1" /></div>
+                                                    </div>
+                                                    <div class="pro-cart-btn mb-25">
+                                                        <a href="#" class="add-to-cart-btn">Add to cart</a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="product__modal-links">
+                                            <ul>
+                                                <li><a href="#" title="Add to Wishlist"><i class="fal fa-heart"></i></a></li>
+                                                <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a></li>
+                                                <li><a href="#" title="Print"><i class="fal fa-print"></i></a></li>
+                                                <li><a href="#" title="Print"><i class="fal fa-share-alt"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- shop modal end -->
+
+    </main>
+
+    <!-- footer area start -->
+    <footer>
+        <div class="footer__area footer-bg">
+            <div class="footer__top footer__top-space-2 pb-25">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6">
+                            <div class="footer__widget pb-30">
+                                <h3 class="footer__widget-title footer__widget-title-2">Useful Links</h3>
+                                <div class="footer__widget-content">
+                                    <div class="footer__links footer__links-2">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Privacy Policy</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Returns</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Terms & Conditions</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Contact Us</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6">
+                            <div class="footer__widget footer-col-4 pb-30">
+                                <h3 class="footer__widget-title footer__widget-title-2">Our Stores</h3>
+                                <div class="footer__widget-content">
+                                    <div class="footer__links footer__links-2">
+                                        <ul>
+                                            <li>
+                                                <a href="#">New York</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">London SF</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Cockfosters BP</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Los Angeles</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6">
+                            <div class="footer__widget footer-col-5 pb-30">
+                                <h3 class="footer__widget-title footer__widget-title-2">My Account</h3>
+                                <div class="footer__widget-content">
+                                    <div class="footer__links footer__links-2">
+                                        <ul>
+                                            <li>
+                                                <a href="#">My Account</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Order History</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Wish List</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Newsletter</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
+                            <div class="footer__widget footer-col-5 pb-30">
+                                <h3 class="footer__widget-title footer__widget-title-2">My Account</h3>
+                                <div class="footer__widget-content">
+                                    <div class="footer__links footer__links-2">
+                                        <ul>
+                                            <li>
+                                                <a href="#">My Account</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Order History</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Wish List</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Newsletter</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
+                            <div class="footer__widget footer__widget-border footer__widget-border-2 footer-col-1 pb-30">
+                                <h3 class="footer__widget-title footer__widget-title-2">Subscribe</h3>
+                                <div class="footer__subscribe footer__subscribe-2 mb-25">
+                                    <p>Enter email address get <a href="#">$20 off your first order</a></p>
+                                    <form action="#">
+                                        <div class="footer__subscribe-input">
+                                            <input type="email" placeholder="Enter Email ID ...">
+                                            <button type="submit"><i class="fab fa-telegram-plane"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="footer__social footer__social-2">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-youtube"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-pinterest"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom-2">
+                <div class="container">
+                    <div class="footer__bottom-2-wrapper pt-30">
+                        <div class="row align-items-center">
+                            <div class="col-xxl-2 col-xl-2 col-lg-6">
+                                <div class="footer__bottom-logo pb-30">
+                                    <a href="~/Trangchu/Index"><img src="~/assets/img/logo/logo-white.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-7 col-xl-7 col-lg-12">
+                                <div class="footer__info pb-30">
+                                    <div class="sm-contact-info">
+                                        <div class="sm-item">
+                                            <span>Call us: <a href="tel:+8537529850">853.752.9850</a> </span>
+                                        </div>
+                                        <div class="sm-item">
+                                            <span>Email: <a href="https://themepure.net/cdn-cgi/l/email-protection#395b55585a524e56565d794a4c4949564b4d175a5654"><span class="__cf_email__" data-cfemail="dbb9b7bab8b0acb4b4bf9ba8aeababb4a9aff5b8b4b6">[email&#160;protected]</span> </a></span>
+                                        </div>
+                                        <div class="sm-item">
+                                            <span><a href="#">Hours: Monday - Saturday 10:30 - 8:45</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="footer__copyright">
+                                        <p>Copyright ©2022 <a href="~/Trangchu/Index">Blackwood.com</a> All Rights Reserved</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-xl-3 col-lg-6">
+                                <div class="payment-image text-lg-end text-md-center pb-30">
+                                    <a href="#"><img src="~/assets/img/payment/payment.jpg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+    <!-- JS here -->
+    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="~/assets/js/vendor/jquery.js"></script>
+    <script src="~/assets/js/vendor/waypoints.js"></script>
+    <script src="~/assets/js/bootstrap-bundle.js"></script>
+    <script src="~/assets/js/meanmenu.js"></script>
+    <script src="~/assets/js/swiper-bundle.js"></script>
+    <script src="~/assets/js/owl-carousel.js"></script>
+    <script src="~/assets/js/magnific-popup.js"></script>
+    <script src="~/assets/js/parallax.js"></script>
+    <script src="~/assets/js/backtotop.js"></script>
+    <script src="~/assets/js/nice-select.js"></script>
+    <script src="~/assets/js/counterup.js"></script>
+    <script src="~/assets/js/countdown.js"></script>
+    <script src="~/assets/js/wow.js"></script>
+    <script src="~/assets/js/isotope-pkgd.js"></script>
+    <script src="~/assets/js/imagesloaded-pkgd.js"></script>
+    <script src="~/assets/js/ajax-form.js"></script>
+    <script src="~/assets/js/main.js"></script>
+</body>
+</html>

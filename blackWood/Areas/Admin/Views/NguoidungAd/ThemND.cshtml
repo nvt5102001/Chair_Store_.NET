@@ -1,0 +1,186 @@
+﻿@model blackWood.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "ThemND";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div id="content" class="bg-container">
+    <header class="head">
+        <div class="main-bar">
+            <div class="row no-gutters">
+                <div class="col-lg-6">
+                    <h4 class="nav_top_align skin_txt">
+                        <i class="fa fa-user"></i>
+                        Thêm thông tin người dùng
+                    </h4>
+                </div>
+                <div class="col-lg-6">
+                    <ol class="breadcrumb float-right nav_breadcrumb_top_align">
+                        <li class="breadcrumb-item">
+                            <a href="index1.html">
+                                <i class="fa fa-home" data-pack="default" data-tags=""></i>
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Người dùng</a>
+                        </li>
+                        <li class="breadcrumb-item active">Thêm sản phẩm</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="outer">
+        <div class="inner bg-container">
+            <div class="card">
+                <div class="card-body m-t-35">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal login_validator" id="tryitForm">
+                            <div class="row">
+                                <div class="col-12">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group row m-t-25">
+                                        <div class="col-lg-3 text-lg-right">
+                                            <label for="u-name" class="col-form-label">Tên tài khoản *</label>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-plus text-primary"></i>
+                                                </span>
+                                                @Html.EditorFor(model => model.TaiKhoan1, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.TaiKhoan1, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 text-lg-right">
+                                            <label for="email" class="col-form-label">
+                                                Mật khẩu *
+
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-plus text-primary"></i></span>
+                                                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 text-lg-right">
+                                            <label for="pwd" class="col-form-label">
+                                                Status *
+
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-plus text-primary"></i></span>
+                                                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 text-lg-right">
+                                            <label for="cpwd" class="col-form-label">Tên người dùng *</label>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-plus text-primary"></i></span>
+                                                @Html.EditorFor(model => model.TenNguoiDung, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.TenNguoiDung, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 text-lg-right">
+                                            <label for="phone" class="col-form-label">
+                                                Email *
+
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-plus text-primary"></i></span>
+                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 text-lg-right">
+                                            <label for="city" class="col-form-label">
+                                                Quyền *
+
+                                            </label>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-8">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-plus text-primary"></i></span>
+                                                @Html.EditorFor(model => model.Quyen, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Quyen, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+
+                                    <div class="form-group row mt-5 ml-4 mr-4">
+                                        <div class="col-lg-10 ml-auto">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="fas fa-user"></i>
+                                                Thêm người dùng
+                                            </button>
+                                            <button class="btn btn-warning" type="reset" id="clear">
+                                                <i class="fa fa-refresh"></i>
+                                                Reset
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-2 mr-0">
+                                            <button class="btn btn-primary">
+                                                @Html.ActionLink("Quay lại", "Index", null, new { @class = "text-light" })
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="search_modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <form>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="float-right" aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="input-group search_bar_small">
+                        <input type="text" class="form-control" placeholder="Search..." name="search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+
+
+</div>

@@ -1,0 +1,14 @@
+﻿@using blackWood.Models;
+@model List<NuocSX>
+
+
+
+@foreach (var item in Model)
+{
+        <a href="@Url.Action("SPTheoNSX" , "Shop" , new {@MaNSX=item.MaNSX})">@item.TenNSX </a>
+}
+
+
+
+
+

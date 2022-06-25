@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "Check Out";
+    Layout = "~/Views/Shared/_LayoutPageCheckOut.cshtml";
+}
+
+@using (Html.BeginForm("SaveOrder", "Cart", FormMethod.Post))
+{
+    <div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="checkbox-form">
+                    <h3>Billing Details</h3>
+                    <div class="row">
+         
+                        <div class="col-md-6">
+                            <div class="checkout-form-list">
+                                <label>First Name <span class="required">*</span></label>
+                                <input type="text" placeholder="" name="fir">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="checkout-form-list">
+                                <label>Last Name <span class="required">*</span></label>
+                                <input type="text" placeholder="" name="last">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="checkout-form-list">
+                                <label>Address <span class="required">*</span></label>
+                                <input type="text" name="addr">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="checkout-form-list">
+                                <label>Email Address <span class="required">*</span></label>
+                                <input type="email" name="email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="checkout-form-list">
+                                <label>Phone <span class="required">*</span></label>
+                                <input type="text" name="phone">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="your-order mb-30 ">
+                    <h3>Your order</h3>
+                    <div class="your-order-table table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="product-name">Product</th>
+                                    <th class="product-total">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="cart_item">
+                                        <td class="product-name">
+                                            @item.sTenSP <strong class="product-quantity"> × @item.iSoLuong</strong>
+                                        </td>
+                                        <td class="product-total">
+                                            <span class="amount">@item.dThanhTien</span>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                            <tfoot>
+                                <tr class="cart-subtotal">
+                                    <th>Total</th>
+                                    <td><span class="amount">@ViewBag.TongTien</span></td>
+                                </tr>
+
+
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="order-button-payment mt-20">
+                        <button type="submit" class="btn-tp">Place order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+

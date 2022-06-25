@@ -1,0 +1,31 @@
+﻿@using blackWood.Models;
+@model List<KichThuoc>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+</link>
+<style>
+    .link__kt {
+        font-size: 16px;
+    }
+
+        .link__kt:hover {
+            color: #ff8429;
+        }
+
+        .link__kt::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f105";
+            margin-right: 10px;
+        }
+</style>
+
+@foreach (var item in Model)
+{
+    <div>
+        <a href="@Url.Action("SPTheoKichThuoc" , "Shop" , new {@MaKT=item.MaKT})" class="link__kt">@item.TenKT </a>
+    </div>
+}
+
+
+
+

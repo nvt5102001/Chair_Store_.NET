@@ -1,0 +1,95 @@
+﻿@model blackWood.Models.DonDatHang
+
+@{
+    ViewBag.Title = "Xoá hoá đơn";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+<style>
+    .table1 {
+    }
+
+    .table1, tr, td, th {
+        border: 1px solid #333;
+        border-collapse: collapse;
+    }
+
+        .table1 td, .table1 th {
+            padding: 10px;
+        }
+</style>
+
+
+<div id="content" class="bg-container">
+    <header class="head">
+        <div class="main-bar">
+            <div class="row no-gutters">
+                <div class="col-lg-6">
+                    <h4 class="nav_top_align skin_txt">
+                        <i class="far fa-file-alt"></i>
+                        Xoá đơn đặt hàng
+                    </h4>
+                </div>
+                <div class="col-lg-6">
+                    <ol class="breadcrumb float-right nav_breadcrumb_top_align">
+                        <li class="breadcrumb-item">
+                            <a href="index1.html">
+                                <i class="fa fa-home" data-pack="default" data-tags=""></i>
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Đơn đặt hàng</a>
+                        </li>
+                        <li class="breadcrumb-item active">Xoá đơn đặt hàng</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="outer">
+        <div class="inner bg-container">
+            <div class="card">
+                <div class="card-body m-t-35">
+                    <h2 class="text-center mb-5">Bạn có chắc chắn muốn xoá đơn hàng này không?</h2>
+                    <table class="w-100 m-auto table1 ">
+                        <tr>
+                            <th class="text-center">Mã hoá đơn</th>
+                            <td>@Html.DisplayFor(model => model.SoHD)</td>
+                        </tr>
+                        <tr>
+                            <th class="text-center"> Ngày bán</th>
+                            <td>@Html.DisplayFor(model => model.NgayBan)</td>
+                        </tr>
+                        <tr>
+                            <th class="text-center"> Tên khách hàng</th>
+                            <td>@Html.DisplayFor(model => model.KhachHang.TenKH)</td>
+                        </tr>
+
+                        <tr>
+                            <th class="text-center">Nơi nhận</th>
+                            <td>@Html.DisplayFor(model => model.NoiNhan)</td>
+                        </tr>
+                        <tr>
+                            <th class="text-center">Tổng tiền</th>
+                            <td>@Html.DisplayFor(model => model.Total) VNĐ</td>
+                        </tr>
+                    </table>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color mt-5">
+                            <input type="submit" value="Xoá" class="btn btn-danger" />
+                            @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-dark" })
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

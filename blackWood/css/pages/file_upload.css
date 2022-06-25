@@ -1,0 +1,99 @@
+.file_input .input-group-btn{
+    display: inline;
+}
+
+.file_input .input-group-btn {
+    display: inline;
+}
+
+.file_input .input-group .form-control:not(:last-child), .file_input .input-group-addon:not(:last-child), .file_input .input-group-btn:not(:last-child) > .btn, .file_input .input-group-btn:not(:last-child) > .btn-group > .btn, .file_input .input-group-btn:not(:last-child) > .file_input .dropdown-toggle, .file_input .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {
+    height: 33px !important;
+}
+.file_input .input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle){
+    height:38px !important;
+}
+.file-zoom-fullscreen .modal-dialog {
+    min-width: 100% !important;
+}
+.fileinput-upload-button {
+    background-color: #ccc !important;
+}
+.button_file .fileinput-remove-button, .button_file .fileinput-upload-button {
+    margin-bottom: 5px;
+}
+
+.kv-upload-progress>.progress, .fileinput-cancel-button {
+    display: none;
+}
+.button_file .btn-file
+{
+    width: 100%;
+}
+.kv-fileinput-caption{
+    padding: 1.30rem 0.75rem;
+}
+@media (max-width:992px) {
+    .hidden-xs {
+        display:none !important;
+    }
+    .file-preview-image, .file-preview-text {
+        width: 100% !important;
+    }
+}
+/*================================dropify=============================*/
+.dropify-wrapper .dropify-errors-container{
+    background: #f86a67;
+}
+.dropify-wrapper.has-error{
+    border-color: #f86a67;
+}
+.dropify-wrapper .dropify-message p.dropify-error{
+    color: #f86a67;
+}
+.dz-image img{
+    width: 100%;
+}
+/*layout fixed header*/
+.fixed_header .file-zoom-fullscreen{
+    z-index: 99999;
+}
+.fixed_header .file-zoom-fullscreen .modal-dialog{
+    top:0;
+}
+.fixed_header .modal{
+    top:60px;
+}
+#scroll{
+    z-index: 999;
+}
+/*===========================End of dropify=============================*/
+/*jquery file upload*/
+@media only screen and (max-width : 767px) {
+    .jquery_file_upload .files img,
+    .jquery_file_upload .files canvas {
+        max-width : none;
+    }
+}
+
+.jquery_file_upload .fade.in{
+    opacity: 1;
+}
+.jquery_file_upload .label-danger{
+    background-color: #f86a67;
+    color: #fff3d9;
+    padding: 5px;
+    border-radius: 5px;
+}
+.jquery_file_upload .custom-control-indicator{
+    margin-top: 12px;
+}
+.modal-header {
+    display: flex;
+}
+.file-zoom-dialog .kv-zoom-actions .btn, .floating-buttons .btn{
+    margin-bottom: 5px;
+}
+#kvFileinputModal{
+    z-index:10000;
+}
+/*end of jquery file upload*/

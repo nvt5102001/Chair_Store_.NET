@@ -1,0 +1,81 @@
+﻿@using blackWood.Models.Datas
+@model List<Cart>
+@{
+    ViewBag.Title = " Update Cart";
+    Layout = "~/Views/Shared/_LayoutPageCart.cshtml";
+}
+
+
+<section class="cart-area pt-120 pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="#">
+                    <div class="table-content table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="product-thumbnail">Images</th>
+                                    <th class="cart-product-name">Product</th>
+                                    <th class="product-price">Unit Price</th>
+                                    <th class="product-quantity">Quantity</th>
+                                    <th class="product-subtotal">Total</th>
+                                    <th class="product-remove">Update</th>
+                                    <th class="product-remove">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td class="product-thumbnail"><a href="product-details.html"><img src="@Url.Content("~/assets/img/products/img_chair/"+ @item.sAnhSP)" alt=""></a></td>
+                                    <td class="product-name"><a href="product-details.html">@item.sTenSP</a></td>
+                                    <td class="product-price"><span class="amount">@item.dDonGia</span></td>
+                                    @using (Html.BeginForm("CapNhatGioHang", "Cart", new { @sMaSP = item.sMaSP }))
+                                    {
+                                        <td class="product-quantity">
+                                            <div class="cart-plus-minus">@Html.TextBox("txtSoLuong", item.iSoLuong)<div class="dec qtybutton">-</div><div class="inc qtybutton">+</div><div class="dec qtybutton">-</div><div class="inc qtybutton">+</div></div>
+                                        </td>
+              
+                                        <td class="product-subtotal"><span class="amount">@item.dThanhTien</span></td>
+                                        <td><button type="submit" class="btn btn-dark"><i class="fas fa-edit"></i></button></td>
+                                        @*<td class="product-remove"><a href="#"></a></td>*@
+                                        <td class="product-remove">@Html.ActionLink("Xoá", "XoaGioHang", new { @sMaSP = item.sMaSP })</td>
+                                    }
+                                </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @*<div class="row">
+                            <div class="col-12">
+                                <div class="coupon-all">
+                                    <div class="coupon">
+                                        <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
+                                        <button class="btn-tp-2" name="apply_coupon" type="submit">Apply coupon</button>
+                                    </div>
+                                    <div class="coupon2">
+                                        <button class="btn-tp-2" name="update_cart" type="submit">Update cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="row justify-content-end">
+                        <div class="col-md-5">
+                            <div class="cart-page-total">
+                                <h2>Cart totals</h2>
+                                <ul class="mb-20">
+
+                                    <li>Total <span>@ViewBag.TongTien</span></li>
+                                </ul>
+                                @Html.ActionLink("Mua hàng", "Cart","Cart",null, htmlAttributes: new { @class ="btn-tp-2" })
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+

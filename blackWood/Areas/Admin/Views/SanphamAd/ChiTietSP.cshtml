@@ -1,0 +1,147 @@
+﻿@model blackWood.Models.SanPham
+@{
+    ViewBag.Title = "ChiTietSP";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<style>
+    .pagination li {
+        width: 30px;
+        height: 30px;
+        border: 2px solid #333;
+        border-radius: 50%;
+        margin: 0 5px;
+        position: relative;
+    }
+
+    .pagination .active {
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+
+    .pagination li a {
+        font-size: 15px;
+        color: #333;
+        position: absolute;
+        padding: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .btnSearch {
+        background: #fff;
+        border: none;
+    }
+
+    .button-right {
+        float: right;
+        padding: 10px;
+    }
+
+        .button-right a {
+            text-decoration: none;
+            color: white;
+        }
+
+    .imgtitle {
+        width: 500px;
+        height: 500px;
+        margin: auto;
+        object-fit: cover;
+    }
+
+        .imgtitle img {
+            width: 100%;
+        }
+</style>
+
+
+
+<div id="content" class="bg-container">
+    <header class="head">
+        <div class="main-bar">
+            <div class="row no-gutters">
+                <div class="col-lg-6">
+                    <h4 class="nav_top_align skin_txt">
+                        <i class="fas fa-chair"></i>
+                        Sửa thông tin sản phẩm
+                    </h4>
+                </div>
+                <div class="col-lg-6">
+                    <ol class="breadcrumb float-right nav_breadcrumb_top_align">
+                        <li class="breadcrumb-item">
+                            <a href="index1.html">
+                                <i class="fa fa-home" data-pack="default" data-tags=""></i>
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Sản phẩm</a>
+                        </li>
+                        <li class="breadcrumb-item active">Sửa sản phẩm</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="imgtitle">
+        <img src="@Url.Content("~/assets/img/products/img_chair/" + @Html.DisplayFor(model => model.AnhSP))">
+    </div>
+
+
+    <p class="mt-3 mb-3 text-center">@Html.DisplayFor(model => model.GioiThieu)</p>
+    <table class="table table-bordered table-hover mt-5 mb-5 text-center detail_table">
+        <tbody>
+            <tr>
+                <td scope="row">Mã sản phẩm</td>
+                <td>@Html.DisplayFor(model => model.MaSP)</td>
+            </tr>
+            <tr>
+                <td scope="row">Tên sản phẩm</td>
+                <td>@Html.DisplayFor(model => model.TenSP)</td>
+            </tr>
+            <tr>
+                <td scope="row">Màu</td>
+                <td>@Html.DisplayFor(model => model.Mau.TenMau)</td>
+            </tr>
+            <tr>
+                <td scope="row">Kích thước</td>
+                <td>@Html.DisplayFor(model => model.KichThuoc.TenKT)</td>
+            </tr>
+            <tr>
+                <td scope="row">Số Lượng</td>
+                <td>@Html.DisplayFor(model => model.SoLuong)</td>
+            </tr>
+            <tr>
+                <td scope="row">Đơn Giá</td>
+                <td>@Html.DisplayFor(model => model.DonGia)</td>
+            </tr>
+
+            <tr>
+                <td scope="row">Loại sản phẩm</td>
+                <td>@Html.DisplayFor(model => model.LoaiSp.TenLoai)</td>
+            </tr>
+            <tr>
+                <td scope="row">Nước sản xuất</td>
+                <td>@Html.DisplayFor(model => model.NuocSX.TenNSX)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="form-group row mt-3">
+        <div class="col-lg-11 ml-auto">
+            <button class="btn btn-dark" >
+                @Html.ActionLink("Quay lại", "Index", null, new { @class = "text-light" })
+            </button>
+            <button class="btn btn-warning">
+                @Html.ActionLink("Sửa Sản Phẩm", "SuaSanPham", new { @MaSP = Model.MaSP })
+            </button>
+        </div>
+       
+    </div>
+   
+</div>
+
